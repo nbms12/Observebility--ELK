@@ -1,6 +1,6 @@
 # Observebility--ELK
 
-AIM : Design and setup Elastic search for Continous Monitoring Java application logs
+AIM : Design and setup Elastic search for Continous Monitoring for Java application logs
 
 Desc: I have Developed  basic  Java application using Maven and configured structured logging with Logback. post  then setted up the Elastic Stack (Elasticsearch, Kibana, and Filebeat) to collect, store, and visualize logs efficiently. At the end  have a fully functional logging setup that helps in centralized log management, making it easier to analyze and troubleshoot issues.
 
@@ -76,7 +76,26 @@ java jdk17, maven ,
  > sudo systemctl enable elasticsearch
  > sudo systemctl start elasticsearch
  > sudo systemctl status elasticsearch ( make it runnin status  )
- > curl -X GET "localhost:9200" ( verify it ) 
+ > curl -X GET "localhost:9200" ( verify it )
+
+7. Install Kibana on the system
+
+    >sudo apt install -y kibana
+
+    >sudo nano /etc/kibana/kibana.yml
+
+    edit below 3  details :
+
+    server.port: 5601
+   
+    server.host: "0.0.0.0"
+   
+    elasticsearch.hosts: ["http://localhost:9200"]
+
+    >sudo systemctl enable kibana
+    >sudo systemctl start kibana
+    >sudo systemctl status kibana  ( open port 5601 on ip ) 
+    
 
 
 
