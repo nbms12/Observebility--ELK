@@ -48,6 +48,38 @@ sudo apt install maven -y
      
 
      
+5. Build the Application
+
+     mvn clean package
+
+6.Setting Up Elastic Stack for Log Monitoring
+
+   >curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+
+   ( add repo )
+
+   >echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
+
+
+   >sudo apt update
+
+  Install Elasticsearch.
+
+ > sudo apt install -y elasticsearch
+
+ > sudo nano /etc/elasticsearch/elasticsearch.yml  ( modify  Elasticsearch configuration for remote access. )
+
+ ![image](https://github.com/user-attachments/assets/cb1a2d03-fc59-41d8-949a-34f4eaa0a4de)
+
+ ![image](https://github.com/user-attachments/assets/bf8206b9-944b-48cf-8856-37a3399d0824)
+
+ > sudo systemctl enable elasticsearch
+ > sudo systemctl start elasticsearch
+ > sudo systemctl status elasticsearch ( make it runnin status  )
+ > curl -X GET "localhost:9200" ( verify it ) 
+
+
+
 
    
 
