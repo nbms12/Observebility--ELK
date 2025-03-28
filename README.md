@@ -93,10 +93,43 @@ java jdk17, maven ,
     elasticsearch.hosts: ["http://localhost:9200"]
 
     >sudo systemctl enable kibana
+    
     >sudo systemctl start kibana
+    
     >sudo systemctl status kibana  ( open port 5601 on ip ) 
     
 
+
+8. install filebeat  ( Filebeat collects and forwards log data to Elasticsearch or Logstash. Install Filebeat on the system. )
+
+
+    >sudo apt install -y filebeat
+
+    >sudo nano /etc/filebeat/filebeat.yml ( edit yml file )
+
+    ![image](https://github.com/user-attachments/assets/2823c884-e881-41d2-86c5-0a4e62d79f3a)
+
+
+    ![image](https://github.com/user-attachments/assets/2a4d6742-2411-4c30-aa35-8cec796f62d1)
+
+
+    >sudo filebeat test config ( test it )
+
+    >sudo filebeat setup ( apply setup )
+
+    >sudo systemctl enable filebeat
+    
+    >sudo systemctl start filebeat
+
+    >sudo systemctl status filebeat
+
+9.Run the Application
+
+>java -jar target/my-app-1.0-SNAPSHOT-jar-with-dependencies.jar ( test it on 8080 port on ip )
+>
+
+
+10. open 5601 port , under observebility > logs , we can see different logs captured 
 
 
 
