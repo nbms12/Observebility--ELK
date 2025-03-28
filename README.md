@@ -30,6 +30,25 @@ sudo apt install maven -y
 
    cd my-app
 
+
+3. Configuring the Java Application
+
+
+     nano pom.xml  ( This project is named my-app and will be packaged as a JAR.  )
+
+     nano src/main/java/com/example/App.java  ( open file and replace App.java code )
+
+
+4. Create the resources directory and add a Logback configuration file.
+
+     mkdir -p src/main/resources
+
+     nano src/main/resources/logback.xml  ( open and replace code as it as )
+
+     
+
+     
+
    
 
 ![image](https://github.com/user-attachments/assets/5f60f065-e6fd-46f6-88f3-87fd01a9e79d)
