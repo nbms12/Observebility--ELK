@@ -120,3 +120,21 @@ email notification alert on crash of pod service-a
 
 <img width="994" height="592" alt="image" src="https://github.com/user-attachments/assets/67c3016c-89b5-4abc-9f25-599ac59cc0bc" />
 
+# Clean UP
+
+Uninstall helm chart:
+```
+helm uninstall monitoring --namespace monitoring
+
+```
+Delete namespace:
+```
+kubectl delete ns monitoring
+kubectl delete ns dev
+```
+
+Delete Cluster & everything else:
+```
+eksctl delete cluster --name observability
+```
+
