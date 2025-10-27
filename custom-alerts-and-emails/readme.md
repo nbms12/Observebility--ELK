@@ -138,3 +138,4 @@ Delete Cluster & everything else:
 eksctl delete cluster --name observability
 ```
 
+<img width="1366" height="699" alt="image" src="https://github.com/user-attachments/assets/44fd4024-dacd-45d4-98a6-d37998fae517" />
